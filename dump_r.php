@@ -97,11 +97,11 @@ Type::hook('_String', function($raw, Type $type, $path) {
 		$type->class[] = '_SQL';
 
 	// _JSON
-	else if ($raw{0} == '{' && $json = json_decode($raw)) {
+	else if ($raw[0] == '{' && $json = json_decode($raw)) {
 		$type->class[] = '_JSON\_Object';
 		$type->inter = $json;
 	}
-	else if ($raw{0} == '[' && $json = json_decode($raw)) {
+	else if ($raw[0] == '[' && $json = json_decode($raw)) {
 		$type->class[] = '_JSON\_Array';
 		$type->inter = $json;
 	}
